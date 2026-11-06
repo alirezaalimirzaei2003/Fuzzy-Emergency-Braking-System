@@ -1,0 +1,80 @@
+[System]
+Name='Tormoz_EzterariFIS'
+Type='sugeno'
+Version=2.0
+NumInputs=4
+NumOutputs=2
+NumRules=9
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='Jelo'
+Range=[0 10]
+NumMFs=3
+MF1='Barkhord':'trapmf',[0 0 0.5 1.5]
+MF2='Nazdik':'trimf',[1 3 5]
+MF3='Door':'trapmf',[4 6 10 10]
+
+[Input2]
+Name='Raast'
+Range=[0 5]
+NumMFs=2
+MF1='Baste':'trapmf',[0 0 0.5 1.5]
+MF2='Baaz':'trapmf',[1 2 5 5]
+
+[Input3]
+Name='Chap'
+Range=[0 5]
+NumMFs=2
+MF1='Baste':'trapmf',[0 0 0.5 1.5]
+MF2='Baaz':'trapmf',[1 2 5 5]
+
+[Input4]
+Name='Soraat'
+Range=[0 2]
+NumMFs=2
+MF1='Kond':'trapmf',[0 0 0.3 0.8]
+MF2='Tond':'trapmf',[0.6 1.2 2 2]
+
+[Output1]
+Name='CharkheshFarmaan'
+Range=[-45 45]
+NumMFs=9
+MF1='CharkheshFarmaanR1':'linear',[0 0 0 3 35]
+MF2='CharkheshFarmaanR2':'linear',[0 0 0 -3 -35]
+MF3='CharkheshFarmaanR3':'linear',[0 0 0 2 20]
+MF4='CharkheshFarmaanR4':'linear',[0 0 0 0 0]
+MF5='CharkheshFarmaanR5':'linear',[-3 0 0 5 15]
+MF6='CharkheshFarmaanR6':'linear',[3 0 0 -5 -15]
+MF7='CharkheshFarmaanR7':'linear',[0 0 0 0 0]
+MF8='CharkheshFarmaanR8':'linear',[-2 0 0 3 10]
+MF9='CharkheshFarmaanR9':'linear',[0 0 0 0 0]
+
+[Output2]
+Name='Tormoz'
+Range=[0 100]
+NumMFs=9
+MF1='TormozR1':'linear',[0 0 0 10 80]
+MF2='TormozR2':'linear',[0 0 0 10 80]
+MF3='TormozR3':'linear',[0 0 0 8 75]
+MF4='TormozR4':'linear',[0 0 0 0 100]
+MF5='TormozR5':'linear',[-2 0 0 8 30]
+MF6='TormozR6':'linear',[-2 0 0 8 30]
+MF7='TormozR7':'linear',[-3 0 0 10 60]
+MF8='TormozR8':'linear',[-1 0 0 5 25]
+MF9='TormozR9':'linear',[0 0 0 2 5]
+
+[Rules]
+1 2 1 0, 1 1 (1) : 1
+1 1 2 0, 2 2 (1) : 1
+1 2 2 0, 3 3 (1) : 1
+1 1 1 0, 4 4 (1) : 1
+2 2 1 0, 5 5 (1) : 1
+2 1 2 0, 6 6 (1) : 1
+2 1 1 0, 7 7 (1) : 1
+2 2 2 0, 8 8 (1) : 1
+3 0 0 0, 9 9 (1) : 1
